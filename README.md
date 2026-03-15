@@ -12,9 +12,10 @@
 ```
 #### 目录
 ```
-	main/
-		|---- notes
-		|---- codes
+	YSYX_C_code/
+		|---- notes/
+		|---- codes/
+		|____ README.md
 ```
 
 
