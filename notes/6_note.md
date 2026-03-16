@@ -21,7 +21,8 @@ int factorial(int n)
   在整个递归调用过程中，虽然分配和释放了很多变量，但所有变量都只在初始化时赋值，没有任何变量的值发生过改变，而上面的循环程序则通过对n和result这两个变量多次赋值来达到同样的目的。前一种思路称为函数式编程（Functional Programming），而后一种思路称为命令式编程（Imperative Programming）
   
 - **函数式编程（Functional Programming）**
-- **命令式编程（Imperative Programming）**  
+- **命令式编程（Imperative Programming）**
+
 数学函数是没有Side Effect的，而C语言的函数可以有Side Effect，比如在一个函数中修改某个全局变量的值就是一种Side Effect。全局变量被多次赋值会给调试带来麻烦，如果一个函数体很长，控制流程很复杂，那么局部变量被多次赋值也会有同样的问题。因此，有很多编程语言可以完全**采用函数式编程的模式**，避免Side Effect，例如LISP、Haskell、Erlang等。用C语言编程主要还是采用Imperative的模式，但要记住，**给变量多次赋值时要格外小心，在代码中多次读写同一变量应该以一种一致的方式进行**。
 #### 注意：
 循环如果写得不小心就会变成**无限循环（Infinite Loop）或者叫死循环**。如果while语句的控制表达式永远为真就成了一个死循环,例如:  
