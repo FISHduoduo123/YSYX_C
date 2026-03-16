@@ -26,10 +26,10 @@
 
 ### I. C语言入门
 #### 1.程序的基本概念
-  1. 程序和编程语言
-  2. 自然语言和形式语言
-  3. 程序的调试
-  4. 第一个程序 
+  1. [程序和编程语言](https://akaedu.github.io/book/intro.program.html)
+  2. [自然语言和形式语言](https://akaedu.github.io/book/intro.naturalformal.html)
+  3. [程序的调试](https://akaedu.github.io/book/ch01s03.html)
+  4. [第一个程序](https://akaedu.github.io/book/intro.helloworld.html)
 #### 2.常量、变量和表达式
   1. 继续Hello World
   2. 常量
