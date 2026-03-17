@@ -62,16 +62,16 @@
   5. [嵌套循环](https://akaedu.github.io/book/ch06s05.html)
   6. [goto语句和标号](https://akaedu.github.io/book/ch06s06.html)
 #### 7. 结构体
-  1. 复合类型与结构体
-  2. 数据抽象
-  3. 数据类型标志
-  4. 嵌套结构体
+  1. [复合类型与结构体](https://akaedu.github.io/book/ch07s01.html)
+  2. [数据抽象](https://akaedu.github.io/book/ch07s02.html)
+  3. [数据类型标志](https://akaedu.github.io/book/ch07s03.html)
+  4. [嵌套结构体](https://akaedu.github.io/book/ch07s04.html)
 #### 8. 数组
-  1. 数组的基本概念
-  2. 数组应用实例：统计随机数
-  3. 数组应用实例：直方图
-  4. 字符串
-  5. 多维数组
+  1. [数组的基本概念](https://akaedu.github.io/book/ch08s01.html)
+  2. [数组应用实例：统计随机数](https://akaedu.github.io/book/ch08s02.html)
+  3. [数组应用实例：直方图](https://akaedu.github.io/book/ch08s03.html)
+  4. [字符串](https://akaedu.github.io/book/ch08s04.html)
+  5. [多维数组](https://akaedu.github.io/book/ch08s05.html)
 #### 9. 编码风格
   1. 缩进和空白
   2. 注释
