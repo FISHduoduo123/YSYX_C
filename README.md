@@ -113,10 +113,10 @@
   3.5. [编译器如何处理类型转换](https://akaedu.github.io/book/ch15s03.html#id2758764)  
 #### 16. 运算符详解
   1. **[位运算](https://akaedu.github.io/book/ch16s01.html)**  
-  1.1. [按位与、或、异或、取反运算](https://akaedu.github.io/book/ch16s01.html#id2761062)  
-  1.2. [移位运算](https://akaedu.github.io/book/ch16s01.html#id2761805)  
-  1.3. [掩码](https://akaedu.github.io/book/ch16s01.html#id2761995)  
-  1.4. [异或运算的一些特性](https://akaedu.github.io/book/ch16s01.html#id2762114)  
+  1.1. [按位与、或、异或、取反运算](https://akaedu.github.io/book/ch16s01.html#id2761062)    
+  1.2. [移位运算](https://akaedu.github.io/book/ch16s01.html#id2761805)    
+  1.3. [掩码](https://akaedu.github.io/book/ch16s01.html#id2761995)    
+  1.4. [异或运算的一些特性](https://akaedu.github.io/book/ch16s01.html#id2762114)    
   2. **[其它运算符](https://akaedu.github.io/book/ch16s02.html)**  
   2.1. [复合赋值运算符](https://akaedu.github.io/book/ch16s02.html#id2762352)  
   2.2. [条件运算符](https://akaedu.github.io/book/ch16s02.html#id2762537)  
