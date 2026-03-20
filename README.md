@@ -134,15 +134,15 @@
   3. 条件预处理指示
   4. 其它预处理特性
 #### 23. 指针
-  1. 指针的基本概念
-  2. 指针类型的参数和返回值
-  3. 指针与数组
-  4. 指针与const限定符
-  5. 指针与结构体
-  6. 指向指针的指针与指针数组
-  7. 指向数组的指针与多维数组
-  8. 函数类型和函数指针类型
-  9. 不完全类型和复杂声明
+  1. [指针的基本概念](https://akaedu.github.io/book/ch23s01.html)  
+  2. [指针类型的参数和返回值](https://akaedu.github.io/book/ch23s02.html)  
+  3. [指针与数组](https://akaedu.github.io/book/ch23s03.html)  
+  4. [指针与const限定符](https://akaedu.github.io/book/ch23s04.html)  
+  5. [指针与结构体](https://akaedu.github.io/book/ch23s05.html)  
+  6. [指向指针的指针与指针数组](https://akaedu.github.io/book/ch23s06.html)  
+  7. [指向数组的指针与多维数组](https://akaedu.github.io/book/ch23s07.html)  
+  8. [函数类型和函数指针类型](https://akaedu.github.io/book/ch23s08.html)  
+  9. [不完全类型和复杂声明](https://akaedu.github.io/book/ch23s09.html)  
 #### 24. 函数接口
   1. 本章的预备知识
   1.1. strcpy与strncpy
