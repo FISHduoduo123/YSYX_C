@@ -1,0 +1,161 @@
+编译器与解释器：
+	1.编译器是将编写的程序编译成机器可执行的静态机器码文件，再由操作系统分配并加载执行
+	2.解释器把脚本中的每一行当作一条命令解释执行并直接呈现运行结果，而不需要先生成包含机器指令的可执行文件再执行解释型语言优势在于开发速度、易用性和交互性，缺点是纯粹解释器实现下性能和资源控制较弱。编译型语言优势在于性能、静态检查和部署为二进制的便利，缺点是开发迭代与构建	复杂度通常更高。
+
+C语言
+二、常量、变量、表达式
+1.转义字符与转换字符：
+	字符串中在字符前添加'\'会改变原本字符含义或将敏感字符改变为普通字符，编译器会将源代码中存在的转义字符翻译成所对应的控制字符或是字符。(如：\n -> 换行命令符, \\ -> '\')
+
+	例：\\打印'?'
+		#include <stdio.h>
+		int main(void)
+		{
+			printf("\?\n");
+			return 0;
+		}
+
+	区别：转义序列是编译时处理的，而转换说明是在运行时调用printf函数处理的。源文件中的字符串字面值是"character: %c\ninteger: %d\nfloating point: %f\n"，\n占两个字符，而编译之后保存在可执行文件中的字符串是character： %c换行integer: %d换行floating point: %f换行，\n已经被替换成一个换行符，而%c不变，然后在运行时这个字符串被传给printf，printf再把其中的%c、%d、%f解释成转换说明。
+2.变量
+	为数值分配的存储空间，空间的名称就叫做变量名称。变量声明时应避开关C语言中强制规定的键字
+	C99规定的关键字有：
+		auto  break  case  char  const  continue  default  do  double
+		else  enum  extern  float  for  goto  if  inline  int  long
+		register  restrict  return  short  signed  sizeof  static  struct  switch  			typedef union  unsigned  void  volatile  while  _Bool  _Complex  				_Imaginary
+
+	还有一点要注意，一般来说应避免使用以下划线开头的标识符，以下划线开头的标识符只要不和C语言关键字冲突的都是合法的，但是往往被编译器用作一些功能扩展，C标准库也定义了很多以下划线开头的标识符，所以除非你对编译器和C标准库特别清楚，一般应避免使用这种标识符，以免造成命名冲突。
+3.赋值：
+	想对声明好的变量进行数值的保存或更改，可以通过=赋值的操作实现。
+	char firstletter;
+	int hour, minute;
+	firstletter = 'a';   /* give firstletter the value 'a' */
+	hour = 11;           /* assign the value 11 to hour */
+	minute = 59;         /* set minute to 59 */
+	实现对变量声明赋值一步操作完成（变量的初始化）可以在声明的后侧通过=直接标明常量作为变量的初始值。
+	char firstletter = 'a';
+	int hour = 11, minute = 59;
+	注意初始化是一种特殊的声明，而不是一种赋值语句。
+5.表达式
+	常量和变量都可以参与加减乘除运算，例如1+1、hour-1、hour * 60 + minute、minute/60等。这里的+ - * /称为运算符（Operator），而参与运算的常量和变量称为操作数（Operand），上面四个由运算符和操作数所组成的算式称为表达式（Expression）。
+	假设变量x和n是两个正整数，我们知道x/n这个表达式的结果要取Floor，例如x是17，n是4，则结果是4。如果希望结果取Ceiling应该怎么写表达式呢？例如x是17，n是4，则结果是5；x是16，n是4，则结果是4。
+	#include <stdio.h>
+	int main(void)
+	{
+    	int a = 5;
+    	int b = 6;
+    	int c;
+    	c = (a+b-1)/b; //向上取整公式
+		printf("%d\n",c);
+		return 0;
+	}
+
+6.字符类型与字符编码
+	符号在计算机内部也用数字表示，每个字符在计算机内部用一个整数表示，称为字符编码（Character Encoding），目前最常用的是ASCII码（American Standard Code for Information Interchange，美国信息交换标准码），在c语言当中对字符类型char变量的存储方式也是采用ascii编码值，因此可以将char型和int型统称为整数类型（Integer Type）或简称整型。
+
+三、简单函数
+1.数学函数
+	#include <math.h>
+	#include <stdio.h>
+
+	int main(void)
+	{
+		double pi = 3.1416;
+		printf("sin(pi/2)=%f\nln1=%f\n", sin(pi/2), log(1.0));
+		return 0;
+	}
+	可以通过引入math标准函数库头文件的方式声明，该c文件所需要使用到数学运算函数。
+2.自定义函数
+	#include <stdio.h>
+
+void newline(void)
+{
+	printf("\n");
+}
+
+int main(void)
+{
+	printf("First Line.\n");
+	newline();
+	printf("Second Line.\n");
+	return 0;
+}
+	定义一个函数时需要标注函数的返回值，接受参数类型，函数名，以及满足先声明后使用的原则。在c语言主函数的定义中需要在返回类型标注为int整数型，不接受任何参数int main(void)，main函数的返回值是返回给操作系统看的，因为main函数是被操作系统调用的，通常程序执行成功就返回0，在执行过程中出错就返回一个非零值。通常自定义函数只关注执行块的过程而不需要接受与返回参数就可以使用void来定义。
+	注意函数声明、函数定义、函数原型（Prototype）这几个概念。比如void threeline(void)这一行，声明了一个函数的名字、参数类型和个数、返回值类型，这称为函数原型。在代码中可以单独写一个函数原型，后面加;号结束，而不写函数体，
+例如：
+	void threeline(void);
+这种写法只能叫函数声明而不能叫函数定义，只有带函数体的声明才叫定义。
+3.形参与实参
+	注意的是，定义变量时可以把相同类型的变量列在一起，而定义参数却不可以。形参相当于函数中定义的变量，调用函数传递参数的过程相当于定义形参变量并且用实参的值来初始化。
+	void print_time(int hour, int minute)
+{
+	printf("%d:%d\n", hour, minute);
+}
+
+int main(void)
+{
+	int h = 23, m = 59;
+	print_time(h, m);
+	return 0;
+}
+习题：
+	1.定义一个函数increment，它的作用是把传进来的参数加1。
+例如：
+
+	void increment(int x)
+	{
+		x = x + 1;
+	}
+
+	int main(void)
+	{
+		int i = 1, j = 2;
+		increment(i); /* i now becomes 2 */
+		increment(j); /* j now becomes 3 */
+		return 0;
+	}
+	我们在main函数中调用increment增加变量i和j的值，这样能奏效吗？为什么？
+	这样的编写方式运行结果，无法符合预期效果的函数的，定义缺少返回值的标注，并且返回值类型标注了void，如果想要看到结果就需要再加一条printf函数。
+	2.如果在一个程序中调用了printf函数却不包含头文件，例如int main(void) { printf("\n"); }，编译时会报警告：warning: incompatible implicit declaration of built-in function ‘printf’。请分析错误原因。
+	没有引入头文件编译器将无法识别printf函数的具体定义行为操作，就会默认视为隐式声明函数提示警告。
+
+4.全局变量、局部变量和作用域
+	把函数中定义的变量称为局部变量（Local Variable），由于形参相当于函数中定义的变量，所以形参也是一种局部变量。在这里“局部”有两层含义：
+
+1、一个函数中定义的变量不能被另一个函数使用。例如print_time中的hour和minute在main函数中没有定义，不能使用，同样main函数中的局部变量也不能被print_time函数使用。如果这样定义：
+
+void print_time(int hour, int minute)
+{
+	printf("%d:%d\n", hour, minute);
+}
+
+int main(void)
+{
+	int hour = 23, minute = 59;
+	print_time(hour, minute);
+	return 0;
+}
+main函数中定义了局部变量hour，print_time函数中也有参数hour，虽然它们名称相同，但仍然是两个不同的变量，代表不同的存储单元。main函数的局部变量minute和print_time函数的参数minute也是如此。
+
+2、每次调用函数时局部变量都表示不同的存储空间。局部变量在每次函数调用时分配存储空间，在每次函数返回时释放存储空间，例如调用print_time(23, 59)时分配hour和minute两个变量的存储空间，在里面分别存上23和59，函数返回时释放它们的存储空间，下次再调用print_time(12, 20)时又分配hour和minute的存储空间，在里面分别存上12和20。
+
+与局部变量的概念相对的是全局变量（Global Variable），全局变量定义在所有的函数体之外，它们在程序开始运行时分配存储空间，在程序结束时释放存储空间，在任何函数中都可以访问全局变量，例如：
+
+例 3.5. 全局变量
+
+#include <stdio.h>
+
+int hour = 23, minute = 59;
+
+void print_time(void)
+{
+	printf("%d:%d in print_time\n", hour, minute);
+}
+
+int main(void)
+{
+	print_time();
+	printf("%d:%d in main\n", hour, minute);
+	return 0;
+}
+
+	正因为全局变量作用域在整个程序，任何函数中都可以访问，所以在程序运行过程中全局变量被读写的顺序从源代码中是看不出来的，源代码的书写顺序并不能反映函数的调用顺序。程序出现了Bug往往就是因为在某个不起眼的地方对全局变量的读写顺序不正确，如果代码规模很大，这种错误是很难找到的。而对局部变量的访问不仅局限在一个函数内部，而且局限在一次函数调用之中，从函数的源代码很容易看出访问的先后顺序是怎样的，所以比较容易找到Bug。因此，虽然全局变量用起来很方便，但一定要慎用，能用函数传参代替的就不要用全局变量。注意局部变量可以用类型相符的任意表达式来初始化，而全局变量只能用常量表达式（Constant Expression）初始化。
