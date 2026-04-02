@@ -141,28 +141,28 @@
   5. 回调函数
   6. 可变参数
 #### 25. C标准库
-  1. [字符串操作函数](https://akaedu.github.io/book/ch25s01.html)
-  1.1. [初始化字符串](https://akaedu.github.io/book/ch25s01.html#id2827594)
-  1.2. [取字符串的长度](https://akaedu.github.io/book/ch25s01.html#id2827671)
-  1.3. [拷贝字符串](https://akaedu.github.io/book/ch25s01.html#id2827741)
-  1.4. [连接字符串](https://akaedu.github.io/book/ch25s01.html#id2828376)
-  1.5. [比较字符串](https://akaedu.github.io/book/ch25s01.html#id2828656)
-  1.6. [搜索字符串](https://akaedu.github.io/book/ch25s01.html#id2828881)
-  1.7. [分割字符串](https://akaedu.github.io/book/ch25s01.html#id2829046)
-  2. 标准I/O库函数
-  2.1. 文件的基本概念
-  2.2. fopen/fclose
-  2.3. stdin/stdout/stderr
-  2.4. errno与perror函数
-  2.5. 以字节为单位的I/O函数
-  2.6. 操作读写位置的函数
-  2.7. 以字符串为单位的I/O函数
-  2.8. 以记录为单位的I/O函数
-  2.9. 格式化I/O函数
-  2.10. C标准库的I/O缓冲区
-  2.11. 本节综合练习
-  3. 数值字符串转换函数
-  4. 分配内存的函数
+  1. [字符串操作函数](https://akaedu.github.io/book/ch25s01.html)  
+  1.1. [初始化字符串](https://akaedu.github.io/book/ch25s01.html#id2827594)  
+  1.2. [取字符串的长度](https://akaedu.github.io/book/ch25s01.html#id2827671)  
+  1.3. [拷贝字符串](https://akaedu.github.io/book/ch25s01.html#id2827741)  
+  1.4. [连接字符串](https://akaedu.github.io/book/ch25s01.html#id2828376)  
+  1.5. [比较字符串](https://akaedu.github.io/book/ch25s01.html#id2828656)  
+  1.6. [搜索字符串](https://akaedu.github.io/book/ch25s01.html#id2828881)  
+  1.7. [分割字符串](https://akaedu.github.io/book/ch25s01.html#id2829046)  
+  2. 标准I/O库函数  
+  2.1. 文件的基本概念  
+  2.2. fopen/fclose  
+  2.3. stdin/stdout/stderr  
+  2.4. errno与perror函数  
+  2.5. 以字节为单位的I/O函数  
+  2.6. 操作读写位置的函数  
+  2.7. 以字符串为单位的I/O函数  
+  2.8. 以记录为单位的I/O函数  
+  2.9. 格式化I/O函数  
+  2.10. C标准库的I/O缓冲区  
+  2.11. 本节综合练习  
+  3. 数值字符串转换函数  
+  4. 分配内存的函数  
 #### 26. 链表、二叉树和哈希表
   1. 链表  
   1.1. 单链表  
