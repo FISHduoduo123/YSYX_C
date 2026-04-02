@@ -7,16 +7,6 @@
     [在线编写编译工具](https://godbolt.org/)  
 	🥭将记录从第1-9章, 第11-16章, 第21章, 第23-25章, 以及第26章第1节(即"链表") 🍇学习内容.  
   
-### "Hello World"
-话不多说就让Hello World作为c语言学习的开端吧！！！
-```
-	#include <stdio.h>  
-	int main(void)  
-	{
-		printf("Hello, world.\n");
-		return 0;
- 	}
-```
 ## 文件结构总览
 ```
 	YSYX_C_code/
