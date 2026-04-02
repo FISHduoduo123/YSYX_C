@@ -141,14 +141,14 @@
   5. 回调函数
   6. 可变参数
 #### 25. C标准库
-  1. 字符串操作函数
-  1.1. 初始化字符串
-  1.2. 取字符串的长度
-  1.3. 拷贝字符串
-  1.4. 连接字符串
-  1.5. 比较字符串
-  1.6. 搜索字符串
-  1.7. 分割字符串
+  1. [字符串操作函数](https://akaedu.github.io/book/ch25s01.html)
+  1.1. [初始化字符串](https://akaedu.github.io/book/ch25s01.html#id2827594)
+  1.2. [取字符串的长度](https://akaedu.github.io/book/ch25s01.html#id2827671)
+  1.3. [拷贝字符串](https://akaedu.github.io/book/ch25s01.html#id2827741)
+  1.4. [连接字符串](https://akaedu.github.io/book/ch25s01.html#id2828376)
+  1.5. [比较字符串](https://akaedu.github.io/book/ch25s01.html#id2828656)
+  1.6. [搜索字符串](https://akaedu.github.io/book/ch25s01.html#id2828881)
+  1.7. [分割字符串](https://akaedu.github.io/book/ch25s01.html#id2829046)
   2. 标准I/O库函数
   2.1. 文件的基本概念
   2.2. fopen/fclose
