@@ -5,7 +5,7 @@ Write a "Hello World" program, compile it, then run it under GNU/Linux. If you d
 ```touch code.c```  
 创建完成后编写打印程序。  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20173826.png)    
-## Write a Makefile to compile the "Hello World" program
+# Write a Makefile to compile the "Hello World" program
 Write a Makefile to compile the "Hello World" program above. If you do not know what to do, refer to the GNU/Linux tutorial above.    
 **创建Makefile文件**    
 ```touch Makefile```    
