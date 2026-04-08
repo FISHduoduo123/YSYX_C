@@ -24,19 +24,20 @@ Read the GDB tutorial above and use GDB following the tutorial. In PA1, you will
 ```gdb hello```  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20174928.png)  
 #### 查看源代码
-- list [N|func] / l：查看源码  
+- list [N|func] / l：查看源码
+![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20180117.png)  
 #### 设置断点并运行
 - break N / b N：在第 N 行设置断点  
-![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20180117.png)    
-- run / r：开始运行程序  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20181459.png)  
-- print var / p var：打印变量值  
+- run / r：开始运行程序  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20182339.png)  
-- delete N：删除编号为 N 的断点  
+- print var / p var：打印变量值  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20182451.png)  
-- continue / c：继续执行到下一个断点  
+- delete N：删除编号为 N 的断点  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20182515.png)  
 #### 退出
+- continue / c：继续执行到下一个断点  
+
 - quit 或 q：退出调试器  
 ![]()  
 ### 其他命令
