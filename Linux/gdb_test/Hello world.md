@@ -34,7 +34,7 @@ Read the GDB tutorial above and use GDB following the tutorial. In PA1, you will
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20182451.png)    
 - print var / p var：打印变量值  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20182515.png)   
-- delete N：删除编号为 N 的断点
+- delete N：删除编号为 N 的断点  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20182612.png)  
 - continue / c：继续执行到下一个断点  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/gdb_test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-08%20182630.png) 
