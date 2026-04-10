@@ -53,10 +53,29 @@ missing:/$
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-09%20193040.png)  
 
 - 1. ls 的 -l 选项（flag）作用是什么？运行 ls -l / 并观察输出。每一行最前面的 10 个字符分别代表什么？（提示：man ls）
-
+  
+![]()  
 - 2. 在命令 find ~/Downloads -type f -name "*.zip" -mtime +30 中，*.zip 是一个 「glob」。什么是 glob ？新建一个测试目录并创建一些文件，试试 ls *.txt 、ls file?.txt 、ls {a,b,c}.txt 等模式。参见 Bash 手册中的 Pattern Matching 。
+  
+![]()    
+**glob**作为文件名通配符，作为批量匹配文件名的规则。  
+- ```ls *.txt```
+![]()     
+- ```ls file?.txt```
+![]()     
+- ```ls {a,b,c}.txt```
+![]()   
 
 - 3. '单引号'、"双引号" 和 $'ANSI 引号' 有什么区别？写一条命令，输出一个同时包含字面量 $ 、! 和换行符的字符串。参见 Quoting 。
+**单引号 ' '**  
+- 不解析引号内字符串
+- 变量  $ 、通配符  * 、转义全都失效
+**双引号 " "**  
+- 解析变量 $，但* {} ?不解析通配符 
+- 保留空格，适合带空格的路径  
+**$' '**  
+- 专门解析 转义字符： \n 换行、 \t 制表符
+- 不解析变量
 
 - 4. Shell 有三条标准流：stdin（0）、stdout（1）、stderr（2）。运行 ls /nonexistent /tmp ，把 stdout 和 stderr 分别重定向到两个文件。你将如何把两者都重定向到同一个文件？参见 Redirections 。
 
