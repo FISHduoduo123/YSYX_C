@@ -91,8 +91,8 @@ lsl
 ## 为什么 cd 必须是 Shell 内建命令，而不能是独立程序？（提示：想想子进程能影响和不能影响父进程的哪些状态。）
 如果作为独立的程序运行时将会创建一基于目标路径的的子程序，但无法实现修改父进程的工作目录的效果，内建命令可直接在 Shell 自身进程中执行，从而改变 Shell 的当前工作目录
 ## 写一个脚本，接收文件名参数（$1），用 test -f 或 [ -f ... ] 检查该文件是否存在，并根据结果输出不同提示。参见 Bash Conditional Expressions 。
-![]()  
-![]()  
+![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20111430.png)  
+![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20111421.png)  
 ## 把上一题完成的脚本保存为文件（如 check.sh）。先运行 ./check.sh somefile ，会发生什么？然后执行 chmod +x check.sh 再试一次。为什么这一步是必须的？（提示：比较 chmod 前后的 ls -l check.sh 输出）
 
 ## 在脚本的 set 选项（flag）里加入 -x 会发生什么？写个简单脚本试试并观察输出。参见 The Set Builtin 。
