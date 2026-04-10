@@ -49,7 +49,7 @@ missing:/$
 这会在当前工作目录下查找所有包含 TODO （这个大写单词）的 .py 文件。
 
 # 练习 
-本课程要求你使用类 Unix 的 Shell，如 Bash 或 ZSH 。若你在 Linux 或 macOS 上，无需额外设置。若你在 Windows 上，请确认你用的不是 cmd.exe 或 PowerShell；你可以使用 Windows Subsystem for Linux 或 Linux 虚拟机来获得 Unix 风格的命令行工具。要确认当前 Shell 是否合适，可运行 echo $SHELL；若输出类似 /bin/bash 或 /usr/bin/zsh ，就说明没问题。  
+要确认当前 Shell 是否合适，可运行 echo $SHELL；若输出类似 /bin/bash 或 /usr/bin/zsh ，就说明没问题。  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-09%20193040.png)  
 
 ## ls 的 -l 选项（flag）作用是什么？运行 ls -l / 并观察输出。每一行最前面的 10 个字符分别代表什么？（提示：man ls）
@@ -101,19 +101,36 @@ lsl
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20113243.png)  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20113233.png)
 ## 写一条命令，把文件复制为带当天日期的备份文件名（例如 notes.txt → notes_2026-01-12.txt）。（提示：$(date +%Y-%m-%d)）参见 Command Substitution 。
-```$()```命令替换符将括号内的指令结果作为字符串插入至当前命令中  
+```$()```**命令替换符将括号内的指令结果作为字符串插入至当前命令中**    
 ```cp notes.txt notes_$(date +%Y-%m-%d).txt```  
 ## 修改讲义中的「复现偶尔才会失败的测试」脚本（flaky test），使它能够从命令行参数接收测试命令，而不是在脚本中写死 cargo test my_test。（提示：$1 或 $@）参见 Special Parameters 。
-
+```if [ $# -eq 1 ]; then
+        echo "请输入命令"
+        exit 1
+fi
+"$@"
+```
 ## 使用管道找出你「home 目录」中最常见的 5 种文件扩展名。（提示：组合 find 、grep / sed / awk、sort、uniq -c 以及 head）
-
+```find ~ -type f -name "*.*" |awk -F. '{print $NF}' | sort | uniq -c | sort -nr | head -5```
+-  find ~ -type f -name "*.*" ：遍历home目录下所有带 . 的普通文件
+​
+-  awk -F. '{print $NF}' ：以 . 为分隔符，取最后一列（即文件扩展名）
+​
+-  sort ：对扩展名排序，为 uniq 做准备
+​
+-  uniq -c ：统计每个扩展名出现的次数
+​
+-  sort -nr ：按次数从大到小排序（ -n 按数值， -r 倒序）
+​
+-  head -5 ：取前5个，即最常见的5种扩展名
 ## xargs 会把 stdin 的每一行转换为命令参数。结合 find 和 xargs（不要用 find -exec），找出目录中所有 .sh 文件，并用 wc -l 统计每个文件行数。加分项：正确处理文件名中的空格。（提示：-print0 和 -0）参见 man xargs 。
-
+```find . -type f -name "*.sh" -print0 | xargs -0 wc -l```
 ## 使用 curl 获取 课程网站 的 HTML，并通过 grep 统计列出了多少讲。（提示：找出每讲课程名称在那份 HTML 中的共性；用 curl -s 关闭进度输出。）
-
+```curl -s [链接] | grep -c '<h3class="lesson-title">' ```
 ## jq 是处理 JSON 的强大工具。用 curl 获取示例数据 https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json，再用 jq 提取 version 大于 6 的人员姓名。（提示：先 jq . 看结构；再试 jq '.[] | select(...) | .name'）
-
+```curl -s https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json | jq -r '.[] | select(.version > 6) | .name'```  
 ## awk 可以按列值过滤行并改写输出。例如，awk '$3 ~ /pattern/ {$4=""; print}' 会只输出第三列匹配 pattern 的行，并省略第四列。请写一个 awk 命令：只输出第二列大于 100 的行，并交换第一列和第三列。可用这条命令测试：printf 'a 50 x\nb 150 y\nc 200 z\n'
-
+```awk '$2 > 100 { temp = $1; $1 = $3; $3 = temp; print }'```  
 ## 拆解讲义中的 SSH 日志处理管道：每一步分别做了什么？然后仿照它构建一个管道，从 ~/.bash_history（或 ~/.zsh_history）中找出你最常使用的 Shell 命令。
+```cat /var/log/auth.log | grep "sshd" | awk '{print $9}' | sort | uniq -c | sort -nr | head -10```
 
