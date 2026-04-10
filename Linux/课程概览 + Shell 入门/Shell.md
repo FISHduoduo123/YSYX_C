@@ -52,12 +52,11 @@ missing:/$
 本课程要求你使用类 Unix 的 Shell，如 Bash 或 ZSH 。若你在 Linux 或 macOS 上，无需额外设置。若你在 Windows 上，请确认你用的不是 cmd.exe 或 PowerShell；你可以使用 Windows Subsystem for Linux 或 Linux 虚拟机来获得 Unix 风格的命令行工具。要确认当前 Shell 是否合适，可运行 echo $SHELL；若输出类似 /bin/bash 或 /usr/bin/zsh ，就说明没问题。  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-09%20193040.png)  
 
-- 1. ls 的 -l 选项（flag）作用是什么？运行 ls -l / 并观察输出。每一行最前面的 10 个字符分别代表什么？（提示：man ls）
-  
+## ls 的 -l 选项（flag）作用是什么？运行 ls -l / 并观察输出。每一行最前面的 10 个字符分别代表什么？（提示：man ls）
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20092511.png)  
 -l: 用于详细显示文件信息的选项从(权限,链接数,所属用户所属组,文件大小,修改时间,
 文件名)  
-- 2. 在命令 find ~/Downloads -type f -name "*.zip" -mtime +30 中，*.zip 是一个 「glob」。什么是 glob ？新建一个测试目录并创建一些文件，试试 ls *.txt 、ls file?.txt 、ls {a,b,c}.txt 等模式。参见 Bash 手册中的 Pattern Matching 。
+## 在命令 find ~/Downloads -type f -name "*.zip" -mtime +30 中，*.zip 是一个 「glob」。什么是 glob ？新建一个测试目录并创建一些文件，试试 ls *.txt 、ls file?.txt 、ls {a,b,c}.txt 等模式。参见 Bash 手册中的 Pattern Matching 。
   
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20094909.png)    
 **glob**作为文件名通配符，作为批量匹配文件名的规则。  
@@ -69,39 +68,40 @@ missing:/$
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20100031.png)     
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20100044.png)   
 
-- 3. '单引号'、"双引号" 和 $'ANSI 引号' 有什么区别？写一条命令，输出一个同时包含字面量 $ 、! 和换行符的字符串。参见 Quoting 。
-**单引号 ' '**  
-1.不解析引号内字符串  
-2.变量  $ 、通配符  * 、转义全都失效  
-**双引号 " "**解析变量 $，但* {} ?不解析通配符   
-**$' '**    
-1.专门解析 转义字符： \n 换行、 \t 制表符  
-2.不解析变量、通配符    
-- 4. Shell 有三条标准流：stdin（0）、stdout（1）、stderr（2）。运行 ls /nonexistent /tmp ，把 stdout 和 stderr 分别重定向到两个文件。你将如何把两者都重定向到同一个文件？参见 Redirections 。
+## '单引号'、"双引号" 和 $'ANSI 引号' 有什么区别？写一条命令，输出一个同时包含字面量 $ 、! 和换行符的字符串。参见 Quoting 。
+### 单引号 ' '
+- 1.不解析引号内字符串  
+- 2.变量  $ 、通配符  * 、转义全都失效  
+### 双引号 " "
+- 解析变量 $，但* {} ?不解析通配符   
+### $' '    
+- 1.专门解析 转义字符： \n 换行、 \t 制表符  
+- 2.不解析变量、通配符    
+## Shell 有三条标准流：stdin（0）、stdout（1）、stderr（2）。运行 ls /nonexistent /tmp ，把 stdout 和 stderr 分别重定向到两个文件。你将如何把两者都重定向到同一个文件？参见 Redirections 。
 
-- 5. $? 保存上一条命令的退出状态（0 表示成功）。&& 仅在前一条成功时执行后一条；|| 仅在前一条失败时执行后一条。写一个一行命令：仅当 /tmp/mydir 不存在时才创建它。参见 Exit Status 。
+## $? 保存上一条命令的退出状态（0 表示成功）。&& 仅在前一条成功时执行后一条；|| 仅在前一条失败时执行后一条。写一个一行命令：仅当 /tmp/mydir 不存在时才创建它。参见 Exit Status 。
 
-- 6. 为什么 cd 必须是 Shell 内建命令，而不能是独立程序？（提示：想想子进程能影响和不能影响父进程的哪些状态。）
+## 为什么 cd 必须是 Shell 内建命令，而不能是独立程序？（提示：想想子进程能影响和不能影响父进程的哪些状态。）
 
-- 7. 写一个脚本，接收文件名参数（$1），用 test -f 或 [ -f ... ] 检查该文件是否存在，并根据结果输出不同提示。参见 Bash Conditional Expressions 。
+## 写一个脚本，接收文件名参数（$1），用 test -f 或 [ -f ... ] 检查该文件是否存在，并根据结果输出不同提示。参见 Bash Conditional Expressions 。
 
-- 8. 把上一题完成的脚本保存为文件（如 check.sh）。先运行 ./check.sh somefile ，会发生什么？然后执行 chmod +x check.sh 再试一次。为什么这一步是必须的？（提示：比较 chmod 前后的 ls -l check.sh 输出）
+## 把上一题完成的脚本保存为文件（如 check.sh）。先运行 ./check.sh somefile ，会发生什么？然后执行 chmod +x check.sh 再试一次。为什么这一步是必须的？（提示：比较 chmod 前后的 ls -l check.sh 输出）
 
-- 9. 在脚本的 set 选项（flag）里加入 -x 会发生什么？写个简单脚本试试并观察输出。参见 The Set Builtin 。
+## 在脚本的 set 选项（flag）里加入 -x 会发生什么？写个简单脚本试试并观察输出。参见 The Set Builtin 。
 
-- 10. 写一条命令，把文件复制为带当天日期的备份文件名（例如 notes.txt → notes_2026-01-12.txt）。（提示：$(date +%Y-%m-%d)）参见 Command Substitution 。
+## 写一条命令，把文件复制为带当天日期的备份文件名（例如 notes.txt → notes_2026-01-12.txt）。（提示：$(date +%Y-%m-%d)）参见 Command Substitution 。
 
-- 11. 修改讲义中的「复现偶尔才会失败的测试」脚本（flaky test），使它能够从命令行参数接收测试命令，而不是在脚本中写死 cargo test my_test。（提示：$1 或 $@）参见 Special Parameters 。
+## 修改讲义中的「复现偶尔才会失败的测试」脚本（flaky test），使它能够从命令行参数接收测试命令，而不是在脚本中写死 cargo test my_test。（提示：$1 或 $@）参见 Special Parameters 。
 
-- 12. 使用管道找出你「home 目录」中最常见的 5 种文件扩展名。（提示：组合 find 、grep / sed / awk、sort、uniq -c 以及 head）
+## 使用管道找出你「home 目录」中最常见的 5 种文件扩展名。（提示：组合 find 、grep / sed / awk、sort、uniq -c 以及 head）
 
-- 13. xargs 会把 stdin 的每一行转换为命令参数。结合 find 和 xargs（不要用 find -exec），找出目录中所有 .sh 文件，并用 wc -l 统计每个文件行数。加分项：正确处理文件名中的空格。（提示：-print0 和 -0）参见 man xargs 。
+## xargs 会把 stdin 的每一行转换为命令参数。结合 find 和 xargs（不要用 find -exec），找出目录中所有 .sh 文件，并用 wc -l 统计每个文件行数。加分项：正确处理文件名中的空格。（提示：-print0 和 -0）参见 man xargs 。
 
-- 14. 使用 curl 获取 课程网站 的 HTML，并通过 grep 统计列出了多少讲。（提示：找出每讲课程名称在那份 HTML 中的共性；用 curl -s 关闭进度输出。）
+## 使用 curl 获取 课程网站 的 HTML，并通过 grep 统计列出了多少讲。（提示：找出每讲课程名称在那份 HTML 中的共性；用 curl -s 关闭进度输出。）
 
-- 15. jq 是处理 JSON 的强大工具。用 curl 获取示例数据 https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json，再用 jq 提取 version 大于 6 的人员姓名。（提示：先 jq . 看结构；再试 jq '.[] | select(...) | .name'）
+## jq 是处理 JSON 的强大工具。用 curl 获取示例数据 https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json，再用 jq 提取 version 大于 6 的人员姓名。（提示：先 jq . 看结构；再试 jq '.[] | select(...) | .name'）
 
-- 16. awk 可以按列值过滤行并改写输出。例如，awk '$3 ~ /pattern/ {$4=""; print}' 会只输出第三列匹配 pattern 的行，并省略第四列。请写一个 awk 命令：只输出第二列大于 100 的行，并交换第一列和第三列。可用这条命令测试：printf 'a 50 x\nb 150 y\nc 200 z\n'
+## awk 可以按列值过滤行并改写输出。例如，awk '$3 ~ /pattern/ {$4=""; print}' 会只输出第三列匹配 pattern 的行，并省略第四列。请写一个 awk 命令：只输出第二列大于 100 的行，并交换第一列和第三列。可用这条命令测试：printf 'a 50 x\nb 150 y\nc 200 z\n'
 
-- 17. 拆解讲义中的 SSH 日志处理管道：每一步分别做了什么？然后仿照它构建一个管道，从 ~/.bash_history（或 ~/.zsh_history）中找出你最常使用的 Shell 命令。
+## 拆解讲义中的 SSH 日志处理管道：每一步分别做了什么？然后仿照它构建一个管道，从 ~/.bash_history（或 ~/.zsh_history）中找出你最常使用的 Shell 命令。
 
