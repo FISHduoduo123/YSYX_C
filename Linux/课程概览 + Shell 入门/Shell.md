@@ -133,4 +133,11 @@ fi
 ```awk '$2 > 100 { temp = $1; $1 = $3; $3 = temp; print }'```  
 ## 拆解讲义中的 SSH 日志处理管道：每一步分别做了什么？然后仿照它构建一个管道，从 ~/.bash_history（或 ~/.zsh_history）中找出你最常使用的 Shell 命令。
 ```cat /var/log/auth.log | grep "sshd" | awk '{print $9}' | sort | uniq -c | sort -nr | head -10```
-
+- cat /var/log/auth.log ：读取SSH登录日志文件
+- grep "sshd" ：筛选出所有sshd相关的登录日志行
+- awk '{print $9}' ：提取第9列（通常是登录IP）
+- sort ：对IP排序，为 uniq 做准备（ uniq 只能统计连续重复的行）
+- uniq -c ：统计每个IP的登录次数
+- sort -nr ：按次数从大到小排序（ -n 按数值排序， -r 倒序）
+- head -10 ：取前10个，即最常登录的IP
+```cat ~/.bash_history | awk '{print $1}' | sort | uniq -c | sort -nr | head -10```
