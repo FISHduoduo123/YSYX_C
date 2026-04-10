@@ -101,7 +101,8 @@ lsl
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20113243.png)  
 ![](https://github.com/FISHduoduo123/YSYX_C/blob/main/Linux/%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%A7%88%20%2B%20Shell%20%E5%85%A5%E9%97%A8/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-04-10%20113233.png)
 ## 写一条命令，把文件复制为带当天日期的备份文件名（例如 notes.txt → notes_2026-01-12.txt）。（提示：$(date +%Y-%m-%d)）参见 Command Substitution 。
-
+```$()```命令替换符将括号内的指令结果作为字符串插入至当前命令中  
+```cp notes.txt notes_$(date +%Y-%m-%d).txt```  
 ## 修改讲义中的「复现偶尔才会失败的测试」脚本（flaky test），使它能够从命令行参数接收测试命令，而不是在脚本中写死 cargo test my_test。（提示：$1 或 $@）参见 Special Parameters 。
 
 ## 使用管道找出你「home 目录」中最常见的 5 种文件扩展名。（提示：组合 find 、grep / sed / awk、sort、uniq -c 以及 head）
