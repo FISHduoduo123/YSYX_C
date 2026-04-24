@@ -1,7 +1,7 @@
 # YSYX_C_codes
   
 ## 介绍
-  🍎各位所看到的是我记录学习c语言历程及作业仓库.  
+  🍎记录学习c语言历程及作业仓库.  
   🥝 参考资料🍐:   
     [Linux C编程一站式学习](http://akaedu.github.io/book/)   
     [在线编写编译工具](https://godbolt.org/)  
