@@ -1,0 +1,25 @@
+type *ptr
+
+type类型的指针，名为ptr。
+
+*ptr
+
+ptr所指向位置的值。
+
+*(ptr + i)
+
+（ptr所指向位置加上i）的值。
+
+    译者注：以字节为单位的话，应该是ptr所指向的位置再加上sizeof(type) * i。
+
+&thing
+
+thing的地址。
+
+type *ptr = &thing
+
+名为ptr，type类型的指针，值设置为thing的地址。
+
+ptr++
+
+自增ptr指向的位置。

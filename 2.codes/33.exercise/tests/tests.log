@@ -1,0 +1,50 @@
+DEBUG tests/list_algos_tests.c:127: ----- RUNNING: test
+DEBUG tests/list_algos_tests.c:108: 
+----- test_bubble_sort
+DEBUG tests/list_algos_tests.c:110: Bubble sort time: 0.413018000
+DEBUG tests/list_algos_tests.c:114: 
+----- test_merge_sort
+DEBUG tests/list_algos_tests.c:116: Merge sort time: 0.009482000
+DEBUG tests/list_algos_tests.c:120: 
+----- test_merge_sort_bottom_up
+DEBUG tests/list_algos_tests.c:33: a∏wêØ^ ~}êØ^
+[ERROR] (tests/list_algos_tests.c:91: errno: None,fun_name: test_merge_sort_bottom_up) Words are not sorted after merge sort.
+DEBUG tests/list_algos_tests.c:127: ----- RUNNING: test
+DEBUG tests/list_algos_tests.c:108: 
+----- test_bubble_sort
+DEBUG tests/list_algos_tests.c:110: Bubble sort time: 0.413843000
+DEBUG tests/list_algos_tests.c:114: 
+----- test_merge_sort
+DEBUG tests/list_algos_tests.c:116: Merge sort time: 0.009034000
+DEBUG tests/list_algos_tests.c:120: 
+----- test_merge_sort_bottom_up
+DEBUG tests/list_algos_tests.c:33: jŒÛiÒU ¯iÒU
+[ERROR] (tests/list_algos_tests.c:91: errno: None,fun_name: test_merge_sort_bottom_up) Words are not sorted after merge sort.
+DEBUG tests/list_algos_tests.c:127: ----- RUNNING: test
+DEBUG tests/list_algos_tests.c:108: 
+----- test_bubble_sort
+DEBUG tests/list_algos_tests.c:110: Bubble sort time: 0.423601000
+DEBUG tests/list_algos_tests.c:114: 
+----- test_merge_sort
+DEBUG tests/list_algos_tests.c:116: Merge sort time: 0.009290000
+DEBUG tests/list_algos_tests.c:120: 
+----- test_merge_sort_bottom_up
+DEBUG tests/list_algos_tests.c:122: Merge sort bottom up time: 0.007400000
+DEBUG tests/list_algos_tests.c:127: ----- RUNNING: test
+DEBUG tests/list_algos_tests.c:108: 
+----- test_bubble_sort
+DEBUG tests/list_algos_tests.c:110: Bubble sort time: 0.413624000
+DEBUG tests/list_algos_tests.c:114: 
+----- test_merge_sort
+DEBUG tests/list_algos_tests.c:116: Merge sort time: 0.009207000
+DEBUG tests/list_algos_tests.c:120: 
+----- test_merge_sort_bottom_up
+DEBUG tests/list_algos_tests.c:33: ˚	~≠n] ûŒc≠n]
+[ERROR] (tests/list_algos_tests.c:91: errno: None,fun_name: test_merge_sort_bottom_up) Words are not sorted after merge sort.
+DEBUG tests/list_algos_tests.c:127: ----- RUNNING: test
+DEBUG tests/list_algos_tests.c:108: 
+----- test_bubble_sort
+DEBUG tests/list_algos_tests.c:110: Bubble sort time: 0.426613000
+DEBUG tests/list_algos_tests.c:114: 
+----- test_merge_sort
+Segmentation fault (core dumped)

@@ -1,0 +1,18 @@
+IO函数
+
+这是一个各种IO函数的简单列表。你应该查询每个函数并为其创建速记卡，包含函数名称，功能和它的任何变体。
+
+    fscanf
+    fgets
+    fopen
+    freopen
+    fdopen
+    fclose
+    fcloseall
+    fgetpos
+    fseek
+    ftell
+    rewind
+    fprintf
+    fwrite
+    fread
